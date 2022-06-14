@@ -6,6 +6,7 @@
             <th>Id</th>
             <th>Name</th>
             <th>Price</th>
+            <th>IDR</th>
         </tr>
     </thead>
     <tbody>
@@ -14,10 +15,11 @@
             <td>{{$product->id}}</td>
             <td>{{$product->name}}</td>
             <td>{{$product->price}}</td>
+            <td>{{$product->price_idr}}</td>
         </tr>
         @empty
         <tr>
-            <td colspan="3">Tidak ada produk</td>
+            <td colspan="4">Tidak ada produk</td>
         </tr>
         @endforelse
     </tbody>

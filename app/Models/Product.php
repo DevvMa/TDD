@@ -9,4 +9,8 @@ class Product extends Model
 {
     use HasFactory;
     protected $fillable = ['name','price'];
+
+    public function getPriceIdrAttr(){
+        return (new CurrencyService())->convert($this->price, 'usd', 'idr');
+    }
 }
