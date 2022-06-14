@@ -15,6 +15,15 @@ class ExampleTest extends TestCase
     public function test_example()
     {
         $response = $this->get('/');
+        $response->assertSeeText("Welcome");
+
+        $response->assertStatus(200);
+    }
+
+    public function CheckDocumentationText()
+    {
+        $response = $this->get('/');
+        $response->assertSeeText("Documentation");
 
         $response->assertStatus(200);
     }
